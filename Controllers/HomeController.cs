@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-
+//Home controller
 namespace BookProject.Controllers
 {
     public class HomeController : Controller
@@ -20,7 +20,7 @@ namespace BookProject.Controllers
             _logger = logger;
             _repository = repository;
         }
-
+        // Loads the index view and sends the book repository along with it in the form of a model so that it can be used in the cshtml page
         public IActionResult Index()
         {
             return View(_repository.Books);

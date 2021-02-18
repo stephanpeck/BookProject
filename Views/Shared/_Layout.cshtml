@@ -6,9 +6,9 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
-    <link rel="shortcut icon" type="~/image/jpg" href="img/favicon.png" />
+    <link rel="shortcut icon" src="~/img/favicon.png"/>
     <link href="~/css/main.css" rel="stylesheet" />
-
+ />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -76,7 +76,6 @@
     </nav>
 
 
-    @*<div class="page-header header-filter blur-filter" data-parallax="true" style="background-image: url( " /img/background.jpg" );">*@
     <div class="page-header header-filter blur-filter" data-parallax="true" style="background-image: url('@ViewBag.Background');">
 
 
@@ -85,12 +84,12 @@
                 <div class="col-md-8 ml-auto mr-auto">
                     <div class="brand">
 
-
+                        @* The title from each page will appear here *@
                         <h1>@ViewBag.Title</h1>
 
 
 
-
+                        @* Sub-title *@
                         <h2>@ViewBag.SubTitle</h2>
 
 
@@ -102,7 +101,7 @@
         </div>
     </div>
 
-
+    @* These divs make up the main container with drop shadow *@
     <div class="main main-raised">
         <div class="section section-basic">
             <div class="container">

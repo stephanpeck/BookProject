@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-
+//Model for books, all fields are required except Author Middle Name/Initial
 namespace BookProject.Models
 {
     public class BookModel
@@ -21,6 +21,7 @@ namespace BookProject.Models
         [Required]
         public string Publisher { get; set; }
         [Required]
+        //Regex expression to make sure the ISBN is correct, Can't test too much because this app doesnt allow for inputs
         [RegularExpression(@"\d{3}-\d{10}", ErrorMessage = "ISBN incorrect, please use this format: 000-0000000000")]
         public string ISBN { get; set; }
         [Required]

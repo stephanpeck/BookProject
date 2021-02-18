@@ -21,7 +21,7 @@ namespace BookProject.Models
                 context.Database.Migrate();
             }
 
-            //if nothing loaded in the database yet, we are going to add some in
+            //if nothing loaded in the database yet, we are going to add some info in
             if(!context.BookModels.Any())
             {
 
