@@ -29,6 +29,8 @@ namespace BookProject.Models
         [Required]
         public string Category { get; set; }
         [Required]
+        public double Pages { get; set; }
+        [Required]
         public double Price { get; set; }
     }
 }

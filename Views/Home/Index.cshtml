@@ -13,7 +13,12 @@
 <!--Assignment 5-->
 <!--Section3 Group7-->
 @*@model IEnumerable<RestaurantRate.Models.RestaurantModel>*@
-@model IQueryable<BookModel>
+
+
+@*@model IQueryable<BookModel>*@
+
+@model BookListViewModel
+
 
 <div>
     @*@if (Model.movieTitle != null)
@@ -21,8 +26,8 @@
             @: @Model.movieTitle successfully added!
         }*@
     @*<a class="nav-link" style="float:right" asp-controller="Home" asp-action="Restaurant">
-        <i class="material-icons">local_dining</i> Create Your Own list of Restaurants
-    </a>*@
+            <i class="material-icons">local_dining</i> Create Your Own list of Restaurants
+        </a>*@
 
     @* Table with bootstrap theme, and hover capabilities *@
     <table class="table table-hover">
@@ -34,6 +39,7 @@
                 <th scope="col">Publisher</th>
                 <th scope="col">Classification</th>
                 <th scope="col">Category</th>
+                <th scope="col">Pages</th>
                 <th scope="col">ISBN</th>
                 <th scope="col">Price</th>
 
@@ -41,25 +47,33 @@
         </thead>
         @* For loop that will go through the model and display all the results *@
         <tbody>
-            @foreach (var x in Model)
+            @foreach (var x in Model.BookModels)
             {
-            <tr>
-                <td>@x.BookID</td>
-                <td>@x.Title</td>
-                <td>@x.AuthorLName, @x.AuthorFName @x.AuthorMName</td>
-                <td>@x.Publisher</td>
-                <td>@x.Classification</td>
-                <td>@x.Category</td>
-                <td>@x.ISBN</td>
-                <td>$@x.Price</td>
+                <tr>
+                    <td>@x.BookID</td>
+                    <td><b>@x.Title</b></td>
+                    <td>@x.AuthorLName, @x.AuthorFName @x.AuthorMName</td>
+                    <td>@x.Publisher</td>
+                    <td>@x.Classification</td>
+                    <td>@x.Category</td>
+                    <td>@x.Pages</td>
+                    <td>@x.ISBN</td>
+                    <td>$@x.Price</td>
 
-            </tr>
+                </tr>
             }
         </tbody>
 
 
     </table>
 
+
+
 </div>
+
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+     page-class-normal="btn-light"
+     page-class-selected="btn-primary"
+     ></div>
 
 
