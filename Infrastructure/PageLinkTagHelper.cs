@@ -20,7 +20,7 @@ namespace BookProject.Infrastructure
         //importing and using the classes above
         private IUrlHelperFactory urlHelperFactory;
 
-        public PageLinkTagHelper (IUrlHelperFactory hp)
+        public PageLinkTagHelper(IUrlHelperFactory hp)
         {
             urlHelperFactory = hp;
         }
@@ -30,6 +30,9 @@ namespace BookProject.Infrastructure
         public ViewContext ViewContext { get; set; }
         public PagingInfo PageModel { get; set; }
         public string PageAction { get; set; }
+
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
+        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
 
         public bool PageClassesEnabled { get; set; }
         public string PageClass { get; set; }
@@ -48,8 +51,11 @@ namespace BookProject.Infrastructure
             {
                 //Building the tag
                 TagBuilder tag = new TagBuilder("a");
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
-                tag.InnerHtml.Append(i.ToString());
+
+
+                PageUrlValues["page"] = i;
+                tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
+                
 
                 if (PageClassesEnabled)
                 {
@@ -57,7 +63,7 @@ namespace BookProject.Infrastructure
                     tag.AddCssClass(i == PageModel.CurrentPage ? PageClassSelected : PageClassNormal);
                 }
 
-
+                tag.InnerHtml.Append(i.ToString());
 
                 //appending tag into HTML
                 result.InnerHtml.AppendHtml(tag);

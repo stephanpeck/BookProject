@@ -11,5 +11,6 @@ namespace BookProject.Models.ViewModels
     {
         public IEnumerable<BookModel> BookModels { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public string CurrentCategory { get; set; }
     }
 }

@@ -49,18 +49,7 @@
         <tbody>
             @foreach (var x in Model.BookModels)
             {
-                <tr>
-                    <td>@x.BookID</td>
-                    <td><b>@x.Title</b></td>
-                    <td>@x.AuthorLName, @x.AuthorFName @x.AuthorMName</td>
-                    <td>@x.Publisher</td>
-                    <td>@x.Classification</td>
-                    <td>@x.Category</td>
-                    <td>@x.Pages</td>
-                    <td>@x.ISBN</td>
-                    <td>$@x.Price</td>
-
-                </tr>
+               <partial name="BookSummary" model="x"/>
             }
         </tbody>
 
@@ -72,7 +61,7 @@
 </div>
 
 <div style="float:right" page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
-     page-class-normal="btn-light"
+     page-class-normal="btn-light" page-url-category="@Model.CurrentCategory"
      page-class-selected="btn-primary"
      ></div>
 

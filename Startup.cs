@@ -56,12 +56,26 @@ namespace BookProject
 
             app.UseAuthorization();
 
+
+            //When searching for endpoints, if it hits one, it will go with that one. It will not continue searching
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    "pagination",
-                    "P{page}",
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" }
+                    );
+
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1 }
+                    );
+
+                endpoints.MapControllerRoute("pagination",
+                    "P/{page}",
                     new { Controller = "Home", action = "Index" });
+
+
+                //Default endpoint if there are no parameters
                 endpoints.MapDefaultControllerRoute();
             });
 
