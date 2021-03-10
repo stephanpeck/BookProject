@@ -9,7 +9,7 @@ namespace BookProject.Models
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
-        public void AddItem (BookModel bookMod, int qty)
+        public virtual void AddItem (BookModel bookMod, int qty)
         {
             //build a new instance of the object
             CartLine line = Lines
@@ -32,10 +32,10 @@ namespace BookProject.Models
             }
         }
         //removing from the cart
-        public void RemoveLine(BookModel bookMod) =>
+        public virtual void RemoveLine(BookModel bookMod) =>
             Lines.RemoveAll(x => x.BookModel.BookID == bookMod.BookID);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
 
         //little different than videos, double check if errors

@@ -16,9 +16,10 @@ namespace BookProject.Pages
         private IBookRepository repository;
 
         //Constructor
-        public BuyModel (IBookRepository repo)
+        public BuyModel (IBookRepository repo, Cart cartService)
         {
             repository = repo;
+            Cart = cartService;
         }
 
         //Properties
@@ -27,22 +28,32 @@ namespace BookProject.Pages
         public string ReturnUrl { get; set; }
 
         //Methods
+        //public void OnGet(string returnUrl)
+        //{
+        //    //if null, use /, which would be root
+        //    ReturnUrl = returnUrl ?? "/";
+        //    Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+        //}
+
+        //FROM BOOK CHANGED
         public void OnGet(string returnUrl)
         {
-            //if null, use /, which would be root
             ReturnUrl = returnUrl ?? "/";
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
+
+
+
+
 
         public IActionResult OnPost(long bookID, string returnUrl)
         {
             BookModel bookModel = repository.Books.FirstOrDefault(b => b.BookID == bookID);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
             Cart.AddItem(bookModel, 1);
 
-            HttpContext.Session.SetJson("cart", Cart);
+            //HttpContext.Session.SetJson("cart", Cart);
 
             return RedirectToPage(new { returnUrl = returnUrl });
 
