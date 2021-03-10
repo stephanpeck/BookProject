@@ -29,7 +29,7 @@ namespace BookProject.Controllers
         // Loads the index view and sends the book repository along with it in the form of a model so that it can be used in the cshtml page
 
         //if no page parameter is passed in, set to 1
-        public IActionResult Index(string category, int page = 1)
+        public IActionResult Index(string category, int pageNum = 1)
         {
             //This is a query written in Linq (which we have imported above)
             return View(new BookListViewModel
@@ -38,13 +38,13 @@ namespace BookProject.Controllers
                 //if category is null, then there won't be anything in category. If someone has passed in a category, then it won't be null. So this covers everything
                 .Where(p => category == null || p.Category == category)
                 .OrderBy(p => p.BookID)
-                .Skip((page - 1) * PageSize)
+                .Skip((pageNum - 1) * PageSize)
                 .Take(PageSize)
 
                 ,
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = PageSize,
                     TotalNumItems = category == null ? _repository.Books.Count() :
                         _repository.Books.Where (x => x.Category == category).Count()

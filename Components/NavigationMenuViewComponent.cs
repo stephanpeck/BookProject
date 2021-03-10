@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace BookProject.Components
-{
+{                                   //inheritance from asp
     public class NavigationMenuViewComponent : ViewComponent
     {
         private IBookRepository repository;
@@ -20,7 +20,7 @@ namespace BookProject.Components
             //denotes the selected category -- @(category == ViewBag.SelectedCategory ? "btn-primary" : "btn-outline-secondary")
             ViewBag.SelectedCategory = RouteData?.Values["category"];
 
-
+            //dynamically adds a new category for books
             return View(repository.Books
                 .Select(x => x.Category)
                 .Distinct()
