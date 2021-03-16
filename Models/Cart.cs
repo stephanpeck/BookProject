@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookProject.Models
+namespace TempleToursProject.Models
 {
     public class Cart
     {

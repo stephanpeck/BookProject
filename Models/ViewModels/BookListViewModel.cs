@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 
 //now that we have this view built, it makes it more flexible, you can change databases and not screw everything up
-namespace BookProject.Models.ViewModels
+namespace TempleToursProject.Models.ViewModels
 {
-    public class BookListViewModel
+    public class TourListViewModel
     {
         public IEnumerable<BookModel> BookModels { get; set; }
         public PagingInfo PagingInfo { get; set; }

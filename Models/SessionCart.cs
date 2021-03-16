@@ -2,9 +2,9 @@
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using BookProject.Infrastructure;
+using TempleToursProject.Infrastructure;
 
-namespace BookProject.Models
+namespace TempleToursProject.Models
 {
     public class SessionCart : Cart
     {

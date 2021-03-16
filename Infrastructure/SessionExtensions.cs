@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace BookProject.Infrastructure
+namespace TempleToursProject.Infrastructure
 {
     //Tool to convert cart object into json string file and back
     public static class SessionExtensions

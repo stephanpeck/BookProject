@@ -1,6 +1,6 @@
 using System;
 
-namespace BookProject.Models
+namespace TempleToursProject.Models
 {
     public class ErrorViewModel
     {

@@ -5,11 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 
 //DBContext page
-namespace BookProject.Models
+namespace TempleToursProject.Models
 {
-    public class BookDbContext : DbContext
+    public class TourDbContext : DbContext
     {
-        public BookDbContext (DbContextOptions<BookDbContext> options) : base (options)
+        public TourDbContext (DbContextOptions<TourDbContext> options) : base (options)
         {
 
         }

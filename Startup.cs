@@ -1,4 +1,4 @@
-using BookProject.Models;
+using TempleToursProject.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookProject
+namespace TempleToursProject
 {
     public class Startup
     {
@@ -28,16 +28,16 @@ namespace BookProject
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<BookDbContext>(options =>
+            services.AddDbContext<TourDbContext>(options =>
             {
-                options.UseSqlite(Configuration["ConnectionStrings:BookConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:TourConnection"]);
 
                 //old sqlserver
-                //options.UseSqlServer(Configuration["ConnectionStrings:BookConnection"]);
+                //options.UseSqlServer(Configuration["ConnectionStrings:TourConnection"]);
             });
 
             //each session is going to get it's own scoped version of the database 
-            services.AddScoped<IBookRepository, EFBookRepository>();
+            services.AddScoped<ITourRepository, EFBookRepository>();
 
             //adding Razor Pages.. also added endpoint below
             services.AddRazorPages();

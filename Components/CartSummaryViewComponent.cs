@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using BookProject.Models;
-namespace BookProject.Components
+using TempleToursProject.Models;
+namespace TempleToursProject.Components
 {
     public class CartSummaryViewComponent : ViewComponent
     {

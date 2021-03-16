@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookProject.Infrastructure
+namespace TempleToursProject.Infrastructure
 {
     public static class UrlExtensions
     {

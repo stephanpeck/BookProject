@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookProject.Models
+namespace TempleToursProject.Models
 {
     public class SeedData
     {
         public static void EnsurePopulated (IApplicationBuilder application)
         {
-            BookDbContext context = application.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<BookDbContext>();
+            TourDbContext context = application.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<TourDbContext>();
 
             //are there any migrations that need to happen?
 

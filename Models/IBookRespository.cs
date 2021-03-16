@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//IBookRepository creates a queryable Book Model
-namespace BookProject.Models
+//ITourRepository creates a queryable Book Model
+namespace TempleToursProject.Models
 {
-    public interface IBookRepository
+    public interface ITourRepository
     {
         IQueryable<BookModel> Books { get; }
     }

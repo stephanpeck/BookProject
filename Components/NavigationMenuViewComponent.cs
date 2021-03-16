@@ -1,17 +1,17 @@
-﻿using BookProject.Models;
+﻿using TempleToursProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookProject.Components
+namespace TempleToursProject.Components
 {                                   //inheritance from asp
     public class NavigationMenuViewComponent : ViewComponent
     {
-        private IBookRepository repository;
+        private ITourRepository repository;
 
-        public NavigationMenuViewComponent (IBookRepository r)
+        public NavigationMenuViewComponent (ITourRepository r)
         {
             repository = r;
         }

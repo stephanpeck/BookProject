@@ -1,4 +1,4 @@
-﻿using BookProject.Models.ViewModels;
+﻿using TempleToursProject.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookProject.Infrastructure
+namespace TempleToursProject.Infrastructure
 {
     //Just like we did asp-action, this is similar with the page-model, we will refer to it this way, this will apply to div's
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 //Model for books, all fields are required except Author Middle Name/Initial
-namespace BookProject.Models
+namespace TempleToursProject.Models
 {
     public class BookModel
     {

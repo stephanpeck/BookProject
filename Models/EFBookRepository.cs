@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 // EFBookRepository
-namespace BookProject.Models
+namespace TempleToursProject.Models
 {
-    public class EFBookRepository : IBookRepository
+    public class EFBookRepository : ITourRepository
     {
-        private BookDbContext _context;
+        private TourDbContext _context;
 
         //Constructor
-        public EFBookRepository (BookDbContext context)
+        public EFBookRepository (TourDbContext context)
         {
             _context = context;
         }
 
 
-        //Dbs set from BookDBContext.cs
+        //Dbs set from TourDbContext.cs
         public IQueryable<BookModel> Books => _context.BookModels;
     }
 }

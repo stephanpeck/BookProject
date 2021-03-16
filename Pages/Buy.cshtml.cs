@@ -4,19 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using BookProject.Models;
-using BookProject.Infrastructure;
+using TempleToursProject.Models;
+using TempleToursProject.Infrastructure;
 
-namespace BookProject.Pages
+namespace TempleToursProject.Pages
 {
     public class BuyModel : PageModel
     {
 
         //creating instacne of our repository
-        private IBookRepository repository;
+        private ITourRepository repository;
 
         //Constructor
-        public BuyModel (IBookRepository repo, Cart cartService)
+        public BuyModel (ITourRepository repo, Cart cartService)
         {
             repository = repo;
             Cart = cartService;
